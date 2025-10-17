@@ -31,6 +31,7 @@ urlpatterns = [
         include(
             [
                 path("clients/", include("apps.clients.api.urls")),
+                path("products/", include("apps.products.api.urls")),
             ]
         ),
     ),
