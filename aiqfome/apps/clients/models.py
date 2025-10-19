@@ -9,7 +9,10 @@ class Client(models.Model):
 
 class ClientFavoriteProduct(models.Model):
     class Meta:
-        unique_together = ("client", "product")
+        unique_together = ("client", "product_id")
 
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    product = models.PositiveIntegerField()
+    product_id = models.PositiveIntegerField()
+    title = models.CharField(max_length=255)
+    image = models.CharField(max_length=255)
+    price = models.FloatField()
